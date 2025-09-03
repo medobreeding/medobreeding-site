@@ -1,18 +1,20 @@
+/* Genel Ayarlar */
 body {
-  margin:0;
+  margin: 0;
+  padding-top: 70px; /* Header sabit olduğundan boşluk bırak */
   font-family: Arial, sans-serif;
-  background:#d6f0c0;
-  color:#000;
+  background: #d6f0c0;
+  color: #000;
 }
 
 /* Header - sabit ve responsive */
 header {
-  background: #7fc37f; /* Daha açık fıstık yeşili */
+  background: #7fc37f;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  position: fixed; /* sabit header */
+  padding: 8px 15px;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -21,18 +23,11 @@ header {
 }
 
 header .logo {
-  width: 300px; /* logo büyüdü */
-  max-width: 85%; /* mobilde küçülmesi için */
+  width: 260px; /* Logo hafif büyütüldü */
+  max-width: 85%;
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
-  header .logo {
-    width: 220px; /* mobilde daha büyük logo */
-    margin-bottom: 10px;
-  }
-}
-/* Header içindeki nav ve dil seçimi */
 nav ul {
   list-style: none;
   display: flex;
@@ -46,19 +41,6 @@ nav ul li {
   align-items: center;
 }
 
-nav select {
-  padding: 5px;
-}
-
-/* Body padding header yüksekliği kadar */
-body {
-  padding-top: 70px; /* header yüksekliğine göre ayarla */
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #d6f0c0;
-  color: #000;
-}
-
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
   header {
@@ -68,7 +50,7 @@ body {
   }
 
   header .logo {
-    width: 180px;
+    width: 200px;
     margin-bottom: 10px;
   }
 
@@ -78,80 +60,74 @@ body {
     width: 100%;
   }
 
-  nav ul li {
-    justify-content: flex-start;
-  }
-
-  nav select {
-    width: 100%;
-  }
-
   body {
-    padding-top: 120px; /* mobilde header biraz daha yüksek olabilir */
+    padding-top: 110px;
   }
 }
 
-/* Home bölümü */
+/* Home Bölümü */
 .home-bg {
-  height: 100vh; /* Tüm ekran yüksekliğini kaplar */
-  width: 100%; /* Tam genişlik */
+  height: 70vh; /* Daha compact görünüm */
+  width: 100%;
   background-image: url('https://i.postimg.cc/YSCLh7Vb/cultuvation2.jpg');
-  background-size: cover; /* Resmi orantılı şekilde büyütür, tam ekranı kaplar */
-  background-position: center center; /* Ortalar */
-  background-repeat: no-repeat; /* Tekrarlamaz */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
+
 .home-text {
-  background: rgba(214, 240, 192, 0.9); /* Açık fıstık yeşili yarı saydam */
-  padding: 20px 30px;
-  border-radius: 12px; /* Kenarları yumuşatır */
-  max-width: 400px;
-  margin-left: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+  background: rgba(214, 240, 192, 0.9);
+  padding: 15px 25px;
+  border-radius: 10px;
+  max-width: 350px;
+  margin-left: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* About bölümü */
+/* About Bölümü */
 .about {
-  display:flex;
-  padding:50px;
-  gap:20px;
+  display: flex;
+  padding: 30px;
+  gap: 15px;
 }
 
 .about-left img {
-  width:300px;
+  width: 250px;
 }
 
 /* Services Bölümü */
 .services {
-  padding: 50px;
-  background: #d6f0c0; /* Açık fıstık yeşili arka plan */
+  padding: 30px;
+  background: #d6f0c0;
 }
 
 .service-container {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .service {
-  background: #d6f0c0; /* Açık fıstık yeşili arka plan */
-  border: 1px solid #000; /* İnce siyah çerçeve */
-  padding: 20px;
+  background: #d6f0c0;
+  border: 1px solid #000;
+  padding: 15px;
   flex: 1;
-  min-width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
   transition: transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
+
 .service:hover {
-  transform: scale(1.03); /* Hafif büyüme efekti */
+  transform: scale(1.02);
 }
 
 .service img {
   width: 100%;
-  border-bottom: 1px solid #000; /* Resim altına ince çizgi */
-  margin-bottom: 15px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
 }
 
 /* Cultivating Section */
@@ -159,10 +135,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
-  gap: 20px;
-  background: #d6f0c0; /* açık fıstık yeşili arka plan */
-  border-radius: 10px; /* hafif köşe yuvarlama */
+  padding: 30px;
+  gap: 15px;
+  background: #d6f0c0;
+  border-radius: 10px;
 }
 
 .cultivating-left {
@@ -171,34 +147,34 @@ body {
 
 .cultivating-left h2 {
   font-weight: bold;
-  font-style: bold;
-  font-size: 32px;
-  margin-bottom: 15px;
+  font-size: 26px;
+  margin-bottom: 10px;
 }
 
 .cultivating-left p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .cultivating-right {
-  flex: 1.5; /* yazıdan daha büyük, sayfanın yaklaşık %75’i kadar */
+  flex: 1.5;
   display: flex;
   justify-content: flex-end;
 }
 
 .cultivating-right img {
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
   height: auto;
-  object-fit: cover; /* resmi tam gösterir ve net tutar */
-  border-radius: 10px;
+  border-radius: 8px;
+  object-fit: cover;
 }
+
 /* Contact */
 .contact {
   display: flex;
-  padding: 50px;
-  gap: 40px;
-  background: #d6f0c0; /* açık fıstık yeşili */
+  padding: 30px;
+  gap: 30px;
+  background: #d6f0c0;
   align-items: flex-start;
 }
 
@@ -207,36 +183,35 @@ body {
 }
 
 .contact-left h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
-  font-style: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .contact-left p {
-  font-size: 16px;
-  margin-bottom: 20px;
+  font-size: 15px;
+  margin-bottom: 15px;
 }
 
 .contact-left form input,
 .contact-left form textarea {
   display: block;
   width: 100%;
-  margin-bottom: 10px;
-  padding: 12px;
-  border-radius: 6px;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
 
 .contact-left button {
-  padding: 12px 25px;
+  padding: 10px 20px;
   background: #5fa35f;
   color: #fff;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 6px;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
 .contact-right {
@@ -247,8 +222,17 @@ body {
 
 .contact-right iframe {
   width: 100%;
-  max-width: 600px;
-  height: 400px;
+  max-width: 500px;
+  height: 350px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background: #5fa35f;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
 }
