@@ -1,19 +1,28 @@
-/* Genel Ayarlar */
+* Genel body ve site-wrapper */
 body {
-  margin: 0;
-  padding-top: 70px; /* Header sabit olduğundan boşluk bırak */
+  margin:0;
   font-family: Arial, sans-serif;
-  background: #d6f0c0;
-  color: #000;
+  background:#d6f0c0;
+  color:#000;
+  padding-top:70px; /* sabit header için */
 }
 
-/* Header - sabit ve responsive */
+.site-wrapper {
+  max-width: 1200px; /* siteyi kompakt yapar */
+  margin: 0 auto;
+  border: 5px solid #7fc37f; /* güzel çerçeve rengi */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+/* Header */
 header {
   background: #7fc37f;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 15px;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +32,7 @@ header {
 }
 
 header .logo {
-  width: 260px; /* Logo hafif büyütüldü */
+  width: 300px;
   max-width: 85%;
   height: auto;
 }
@@ -41,198 +50,171 @@ nav ul li {
   align-items: center;
 }
 
+/* Dil seçimi gizlendi */
+#language-select {
+  display: none;
+}
+
 /* Mobil uyumluluk */
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
   }
-
   header .logo {
-    width: 200px;
+    width: 180px;
     margin-bottom: 10px;
   }
-
   nav ul {
     flex-direction: column;
     gap: 8px;
     width: 100%;
   }
-
-  body {
-    padding-top: 110px;
-  }
 }
 
-/* Home Bölümü */
+/* Home */
 .home-bg {
-  height: 70vh; /* Daha compact görünüm */
+  height: 90vh; /* biraz daha kompakt */
   width: 100%;
   background-image: url('https://i.postimg.cc/YSCLh7Vb/cultuvation2.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-
 .home-text {
   background: rgba(214, 240, 192, 0.9);
-  padding: 15px 25px;
-  border-radius: 10px;
-  max-width: 350px;
-  margin-left: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  margin-left: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* About Bölümü */
+/* About */
 .about {
-  display: flex;
-  padding: 30px;
-  gap: 15px;
+  display:flex;
+  padding:30px 50px;
+  gap:20px;
+  background:#d6f0c0;
 }
-
 .about-left img {
-  width: 250px;
+  width:250px;
 }
 
-/* Services Bölümü */
+/* Services */
 .services {
-  padding: 30px;
-  background: #d6f0c0;
+  padding:30px 50px;
+  background:#d6f0c0;
 }
-
 .service-container {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex-wrap: wrap;
 }
-
 .service {
   background: #d6f0c0;
-  border: 1px solid #000;
-  padding: 15px;
+  border: 1px solid #5fa35f; /* çerçeve uyumlu */
+  padding: 20px;
   flex: 1;
-  min-width: 250px;
+  min-width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
-
 .service:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
-
 .service img {
-  width: 100%;
-  border-bottom: 1px solid #000;
-  margin-bottom: 10px;
+  width:100%;
+  margin-bottom:15px;
 }
 
-/* Cultivating Section */
+/* Cultivating */
 .cultivating {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 30px;
-  gap: 15px;
-  background: #d6f0c0;
-  border-radius: 10px;
+  display:flex;
+  gap:20px;
+  padding:30px 50px;
+  background:#d6f0c0;
 }
-
 .cultivating-left {
-  flex: 1;
+  flex:1;
 }
-
 .cultivating-left h2 {
-  font-weight: bold;
-  font-size: 26px;
-  margin-bottom: 10px;
+  font-weight:bold;
+  font-style:italic;
+  font-size:28px;
+  margin-bottom:10px;
 }
-
 .cultivating-left p {
-  font-size: 16px;
+  font-size:16px;
 }
-
 .cultivating-right {
-  flex: 1.5;
-  display: flex;
-  justify-content: flex-end;
+  flex:1.5;
 }
-
 .cultivating-right img {
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
+  width:100%;
+  max-width:700px;
+  height:auto;
+  object-fit:cover;
 }
 
 /* Contact */
 .contact {
-  display: flex;
-  padding: 30px;
-  gap: 30px;
-  background: #d6f0c0;
-  align-items: flex-start;
+  display:flex;
+  gap:20px;
+  padding:30px 50px;
+  background:#d6f0c0;
 }
-
 .contact-left {
-  flex: 1;
+  flex:1;
 }
-
 .contact-left h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:10px;
 }
-
 .contact-left p {
-  font-size: 15px;
-  margin-bottom: 15px;
+  font-size:14px;
+  margin-bottom:15px;
 }
-
 .contact-left form input,
 .contact-left form textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 8px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  display:block;
+  width:100%;
+  margin-bottom:10px;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
 }
-
 .contact-left button {
-  padding: 10px 20px;
-  background: #5fa35f;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  border-radius: 5px;
+  padding:10px 20px;
+  background:#5fa35f;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  border-radius:6px;
 }
-
 .contact-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
+  flex:1;
+  display:flex;
+  justify-content:flex-end;
 }
-
 .contact-right iframe {
-  width: 100%;
-  max-width: 500px;
-  height: 350px;
-  border: none;
-  border-radius: 8px;
+  width:100%;
+  max-width:500px;
+  height:350px;
+  border:none;
+  border-radius:10px;
 }
 
 /* Footer */
 footer {
-  background: #5fa35f;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  background:#7fc37f;
+  color:#000;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
 }
