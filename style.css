@@ -1,16 +1,16 @@
-* Genel body ve site-wrapper */
+/* Genel body ve site-wrapper */
 body {
-  margin:0;
+  margin: 0;
   font-family: Arial, sans-serif;
-  background:#d6f0c0;
-  color:#000;
-  padding-top:70px; /* sabit header için */
+  background: #d6f0c0;
+  color: #000;
+  padding-top: 70px; /* sabit header için */
 }
 
 .site-wrapper {
   max-width: 1200px; /* siteyi kompakt yapar */
   margin: 0 auto;
-  border: 5px solid #7fc37f; /* güzel çerçeve rengi */
+  border: 5px solid #7fc37f; /* çerçeve rengi */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
@@ -21,8 +21,9 @@ header {
   background: #7fc37f;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  justify-content: flex-start;
+  padding: 10px 50px;
+  gap: 250px;
   position: fixed;
   top: 0;
   left: 0;
@@ -55,26 +56,9 @@ nav ul li {
   display: none;
 }
 
-/* Mobil uyumluluk */
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  header .logo {
-    width: 180px;
-    margin-bottom: 10px;
-  }
-  nav ul {
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-  }
-}
-
 /* Home */
 .home-bg {
-  height: 90vh; /* biraz daha kompakt */
+  height: 82vh; /* kompakt */
   width: 100%;
   background-image: url('https://i.postimg.cc/YSCLh7Vb/cultuvation2.jpg');
   background-size: cover;
@@ -84,29 +68,31 @@ nav ul li {
   align-items: center;
   justify-content: flex-start;
 }
+
 .home-text {
   background: rgba(214, 240, 192, 0.9);
   padding: 20px 30px;
-  border-radius: 12px;
-  max-width: 400px;
-  margin-left: 50px;
+  border-radius: 40px;
+  max-width: 350px;
+  margin-left: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* About */
 .about {
   display:flex;
-  padding:30px 50px;
-  gap:20px;
+  padding: 20px;
+  gap: 20px;
   background:#d6f0c0;
 }
 .about-left img {
-  width:250px;
+  width: 300px;
+  margin-top: 50px; /* üstten boşluk ekler, resmi aşağıya iter */
 }
 
 /* Services */
 .services {
-  padding:30px 50px;
+  padding: 30px 50px;
   background:#d6f0c0;
 }
 .service-container {
@@ -116,7 +102,7 @@ nav ul li {
 }
 .service {
   background: #d6f0c0;
-  border: 1px solid #5fa35f; /* çerçeve uyumlu */
+  border: 1px solid #5fa35f;
   padding: 20px;
   flex: 1;
   min-width: 300px;
@@ -135,7 +121,7 @@ nav ul li {
 .cultivating {
   display:flex;
   gap:20px;
-  padding:30px 50px;
+  padding: 30px 50px;
   background:#d6f0c0;
 }
 .cultivating-left {
@@ -217,4 +203,51 @@ footer {
   text-align:center;
   padding:10px;
   font-weight:bold;
+}
+
+/* Mobil Uyumlu Ayarlar */
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 140px; /* header + gap mobilde */
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 15px;
+  }
+
+  header .logo {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .home-bg {
+    height: 50vh;
+    justify-content: center;
+  }
+
+  .home-text {
+    max-width: 90%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .about, .service-container, .cultivating, .contact {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cultivating-right img,
+  .contact-right iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
