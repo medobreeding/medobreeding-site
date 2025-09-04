@@ -230,16 +230,16 @@ footer {
   header {
     flex-direction: column;
     align-items: center;
-    padding: 10px 15px;
-    gap: 8px; /* mobilde logo, başlık ve menü arası boşluk */
+    padding: 5px 10px;
+    gap: 5px; /* mobilde logo, başlık ve menü arası boşluk */
   }
 
   header .logo {
-    width: 120px; /* mobilde logo küçültüldü */
+    width: 100px; /* mobilde logo küçültüldü */
   }
 
   header h1 {
-    font-size: 18px; /* mobilde başlık küçültüldü */
+    font-size: 14px; /* mobilde başlık küçültüldü */
     margin-left: 0;
     text-align: center;
   }
