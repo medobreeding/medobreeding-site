@@ -21,7 +21,7 @@ header {
   background: #7fc37f;
   display: flex;
   align-items: center;
-  justify-content: center; /* Sol yerine ortalar */;
+  justify-content: center; /* Sol yerine ortalar */
   padding: 3px 10px;
   gap: 250px;
   position: fixed;
@@ -226,22 +226,27 @@ footer {
     padding-top: 120px; /* header + gap mobilde */
   }
 
-  /* Header ve logo */
+  /* Header ve logo - mobilde küçültme eklendi */
   header {
     flex-direction: column;
     align-items: center;
     padding: 10px 15px;
-    gap: 10px;
+    gap: 8px; /* mobilde logo, başlık ve menü arası boşluk */
   }
 
   header .logo {
-    width: 160px;
-    margin-bottom: 5px;
+    width: 120px; /* mobilde logo küçültüldü */
+  }
+
+  header h1 {
+    font-size: 18px; /* mobilde başlık küçültüldü */
+    margin-left: 0;
+    text-align: center;
   }
 
   nav ul {
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
   }
 
