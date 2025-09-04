@@ -21,8 +21,8 @@ header {
   background: #7fc37f;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px 50px;
+  justify-content: center; /* Sol yerine ortalar */;
+  padding: 3px 10px;
   gap: 250px;
   position: fixed;
   top: 0;
@@ -87,31 +87,45 @@ nav ul li {
 }
 .about-left img {
   width: 300px;
-  margin-top: 50px; /* üstten boşluk ekler, resmi aşağıya iter */
+  margin-top: 50px;
 }
 
-/* Services */
+/* ------------------- Services ------------------- */
 .services {
   padding: 30px 50px;
   background:#d6f0c0;
 }
+
 .service-container {
   display: flex;
-  gap: 20px;
+  gap: 40px; /* Masaüstü için boşluk */
   flex-wrap: wrap;
+  justify-content: center; /* Masaüstünde kartları ortalar */
+  overflow-x: auto; /* Mobilde sağ-sol kaydırma */
+  -webkit-overflow-scrolling: touch; /* iOS uyumu */
+  scroll-snap-type: x mandatory;
 }
+
+.service-container::-webkit-scrollbar {
+  display: none; /* scrollbar gizlenir */
+}
+
 .service {
+  flex: 0 0 auto; /* sabit genişlikli kart */
+  min-width: 250px;
+  max-width: 300px; /* Masaüstü için kart genişliği */
   background: #d6f0c0;
   border: 1px solid #5fa35f;
   padding: 20px;
-  flex: 1;
-  min-width: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  scroll-snap-align: start;
 }
+
 .service:hover {
   transform: scale(1.03);
 }
+
 .service img {
   width:100%;
   margin-bottom:15px;
@@ -205,30 +219,33 @@ footer {
   font-weight:bold;
 }
 
-/* Mobil Uyumlu Ayarlar */
+/* ------------------- Mobil Uyumlu Ayarlar ------------------- */
 @media screen and (max-width: 768px) {
+
   body {
-    padding-top: 140px; /* header + gap mobilde */
+    padding-top: 120px; /* header + gap mobilde */
   }
 
+  /* Header ve logo */
   header {
     flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    gap: 15px;
+    padding: 10px 15px;
+    gap: 10px;
   }
 
   header .logo {
-    width: 180px;
-    margin-bottom: 10px;
+    width: 160px;
+    margin-bottom: 5px;
   }
 
   nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
   }
 
+  /* Home */
   .home-bg {
     height: 50vh;
     justify-content: center;
@@ -238,13 +255,40 @@ footer {
     max-width: 90%;
     margin-left: 0;
     text-align: center;
+    font-size: 14px;
   }
 
-  .about, .service-container, .cultivating, .contact {
+  /* Başlık mobilde daha küçük ve ince */
+  .cultivating-left h2,
+  .contact-left h2,
+  .service h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  /* About, Services, Cultivating, Contact mobil düzen */
+  .about, 
+  .service-container, 
+  .cultivating, 
+  .contact {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 
+  /* Services alanı mobil kaydırma ve kart genişliği */
+  .service-container {
+    gap: 20px;
+    flex-wrap: nowrap; /* yatay kaydırma */
+    justify-content: flex-start; /* sola hizalama */
+    padding-left: 15px; /* sol kenardan boşluk */
+  }
+
+  .service {
+    min-width: 80%; /* mobilde kartlar geniş, okunabilir */
+    max-width: 80%;
+  }
+
+  /* Resimler ve harita mobil uyumu */
   .cultivating-right img,
   .contact-right iframe {
     max-width: 100%;
