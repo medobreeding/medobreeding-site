@@ -21,9 +21,9 @@ header {
   background: #7fc37f;
   display: flex;
   align-items: center;
-  justify-content: center; /* Sol yerine ortalar */
+  justify-content: center;
   padding: 3px 10px;
-  gap: 250px;
+  gap: 650px;
   position: fixed;
   top: 0;
   left: 0;
@@ -34,14 +34,14 @@ header {
 
 header .logo {
   width: 300px;
-  max-width: 85%;
+  max-width: 72%;
   height: auto;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: 20px;
   margin: 0;
   padding: 0;
 }
@@ -51,6 +51,16 @@ nav ul li {
   align-items: center;
 }
 
+nav ul li a {
+  color: black;      
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
 /* Dil seçimi gizlendi */
 #language-select {
   display: none;
@@ -58,24 +68,29 @@ nav ul li {
 
 /* Home */
 .home-bg {
-  height: 82vh; /* kompakt */
+  position: relative;
   width: 100%;
-  background-image: url('https://i.postimg.cc/YSCLh7Vb/cultuvation2.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  height: 100vh; /* tam ekran yüksekliği */
+  overflow: hidden;
+}
+
+.home-bg .home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* arkaplanı tüm ekran kaplasın */
+  object-position: center; /* objeyi ortala */
 }
 
 .home-text {
+  position: absolute;
+  top: 70%; /* yukarıya çek */
+  left: 4%; /* sola kaydır */
+  transform: translate(0, -50%);
   background: rgba(214, 240, 192, 0.9);
   padding: 20px 30px;
   border-radius: 40px;
   max-width: 350px;
-  margin-left: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: left;
 }
 
 /* About */
@@ -92,28 +107,28 @@ nav ul li {
 
 /* ------------------- Services ------------------- */
 .services {
-  padding: 30px 50px;
+  padding: 40px 50px;
   background:#d6f0c0;
 }
 
 .service-container {
   display: flex;
-  gap: 40px; /* Masaüstü için boşluk */
+  gap: 100px;
   flex-wrap: wrap;
-  justify-content: center; /* Masaüstünde kartları ortalar */
-  overflow-x: auto; /* Mobilde sağ-sol kaydırma */
-  -webkit-overflow-scrolling: touch; /* iOS uyumu */
+  justify-content: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
 }
 
 .service-container::-webkit-scrollbar {
-  display: none; /* scrollbar gizlenir */
+  display: none;
 }
 
 .service {
-  flex: 0 0 auto; /* sabit genişlikli kart */
-  min-width: 250px;
-  max-width: 300px; /* Masaüstü için kart genişliği */
+  flex: 0 0 auto;
+  min-width: 350px;
+  max-width: 300px;
   background: #d6f0c0;
   border: 1px solid #5fa35f;
   padding: 20px;
@@ -143,12 +158,12 @@ nav ul li {
 }
 .cultivating-left h2 {
   font-weight:bold;
-  font-style:italic;
-  font-size:28px;
-  margin-bottom:10px;
+  font-size:30px;
+  margin-top: 90px;
+  margin-bottom:20px;
 }
 .cultivating-left p {
-  font-size:16px;
+  font-size:18px;
 }
 .cultivating-right {
   flex:1.5;
@@ -223,25 +238,18 @@ footer {
 @media screen and (max-width: 768px) {
 
   body {
-    padding-top: 120px; /* header + gap mobilde */
+    padding-top: 120px;
   }
 
-  /* Header ve logo - mobilde küçültme eklendi */
   header {
     flex-direction: column;
     align-items: center;
     padding: 5px 10px;
-    gap: 5px; /* mobilde logo, başlık ve menü arası boşluk */
+    gap: 5px;
   }
 
   header .logo {
-    width: 100px; /* mobilde logo küçültüldü */
-  }
-
-  header h1 {
-    font-size: 14px; /* mobilde başlık küçültüldü */
-    margin-left: 0;
-    text-align: center;
+    width: 100px;
   }
 
   nav ul {
@@ -252,23 +260,20 @@ footer {
 
   /* Home */
   .home-bg {
-    height: 50vh;
-    justify-content: center;
+    height: 60vh;
+  }
+
+  .home-bg .home-image {
+    object-fit: contain; /* obje tam görünür */
   }
 
   .home-text {
     max-width: 90%;
     margin-left: 0;
-    text-align: center;
+    top: 55%; /* biraz yukarı al */
+    left: 10%; /* sola kaydır */
+    text-align: left;
     font-size: 14px;
-  }
-
-  /* Başlık mobilde daha küçük ve ince */
-  .cultivating-left h2,
-  .contact-left h2,
-  .service h3 {
-    font-size: 20px;
-    font-weight: 600;
   }
 
   /* About, Services, Cultivating, Contact mobil düzen */
@@ -283,17 +288,24 @@ footer {
   /* Services alanı mobil kaydırma ve kart genişliği */
   .service-container {
     gap: 20px;
-    flex-wrap: nowrap; /* yatay kaydırma */
-    justify-content: flex-start; /* sola hizalama */
-    padding-left: 15px; /* sol kenardan boşluk */
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-left: 15px;
   }
 
   .service {
-    min-width: 80%; /* mobilde kartlar geniş, okunabilir */
+    min-width: 80%;
     max-width: 80%;
   }
 
-  /* Resimler ve harita mobil uyumu */
+  /* Cultivating */
+  .cultivating-left h2,
+  .contact-left h2,
+  .service h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
   .cultivating-right img,
   .contact-right iframe {
     max-width: 100%;
