@@ -10,6 +10,17 @@ const translations = {
     "home-subtitle": "Sürdürülebilir tarım için yenilikçi çözümler",
     "service1-item1": "Islah Stratejisi Tasarımı – net hedeflerin belirlenmesi",
     "contact-info": "Hollanda, Leiden | Telefon: +31612345678 | E-posta: medobreeding@gmail.com"
-  },
-  // ispanyolca ve hollandaca
+  }
 };
+
+function setLanguage(lang) {
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if(translations[lang] && translations[lang][key]){
+      el.textContent = translations[lang][key];
+    }
+  });
+}
+
+// Örnek kullanım: Türkçe yapmak için
+// setLanguage('tr');
