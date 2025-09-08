@@ -272,7 +272,7 @@ footer {
   align-items: center;     
   justify-content: flex-start; /* Sola hizala */
   margin: 0;
-  padding-left: 10px;          /* Hafif iç boşluk, kenara yapışmasın */
+  padding-left: 4px;          /* Hafif iç boşluk, kenara yapışmasın */
 }
   /* Navbar linkleri – mobilde ince ve küçük */
   header nav ul li a {
@@ -306,10 +306,10 @@ footer {
 
 .home-text {
   position: relative;
-  top: 75px;            /* kutuyu aşağıya indirir */
+  top: 90px;            /* kutuyu aşağıya indirir */
   left: 4%; /* sola kaydır */
   transform: translateY(0); /* dikey ortalama için translate kaldırıldı */
-  max-width: 40%;
+  max-width: 28%;
   text-align: left;
   font-size: 5px;
 
@@ -321,13 +321,13 @@ footer {
 }
 
 .home-text h2 {
-  font-size: 5px;  /* başlık küçültüldü */
+  font-size: 7px;  /* başlık küçültüldü */
   line-height: 1.2;
   margin: 0; /* çerçevenin içinde düzgün oturması için */
 }
 
 .home-text p {
-  font-size: 5px;  /* alt yazı küçültüldü */
+  font-size: 7px;  /* alt yazı küçültüldü */
 }
 
 /* Başlıklar mobilde daha küçük ve ince */
@@ -360,7 +360,7 @@ footer {
     max-width: 350px;            
     min-width: unset;            
     margin-bottom: 20px;         
-    margin-left: 0;              /* Sol boşluk zaten container’dan geliyor */
+    margin-left: 0;              /* Gereksiz sağ boşluğu kaldır */
     margin-right: 0;             /* Gereksiz sağ boşluğu kaldır */
   }
 }
