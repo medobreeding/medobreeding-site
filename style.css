@@ -360,9 +360,10 @@ footer {
     max-width: 350px;            
     min-width: unset;            
     margin-bottom: 20px;         
-    margin-left: 0;              /* Gereksiz sağ boşluğu kaldır */
-    margin-right: 0;             /* Gereksiz sağ boşluğu kaldır */
-  }
+     margin-left: 1;
+    margin-right: 1;
+}
+}
 }
 
   /* Resimler ve harita mobil uyumu */
